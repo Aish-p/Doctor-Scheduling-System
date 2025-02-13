@@ -6,14 +6,21 @@ Simulation of an online medical appointment system using a hybrid architecture o
 
 ## 📜 Project Description
 
-The program runs in three phases:
+We have the health center server for authenticating users and reserving time slots, 2 patients and 2 doctors. Communication between the health center server and patients in the first 2 phases is through TCP sockets. In the last phase, communication between the doctors and the patients is through UDP sockets.
+
+**The program runs in three phases:**
 
 1. **User Authentication** – Patients authenticate with the Health Center Server via TCP.
+    In the first phase, patients connect with the health center server on a static port using TCP socket. On successful authentication by the server, they can continue to phase 2 and ask for available time slots      for appointment.
 
 2. **Scheduling an Appointment** – Patients request and reserve available time slots.
+    In the second phase, the server will send a list of available time slots to the patient. The patient chooses one time slot and, if that has not already been reserved, that slot is reserved for the asking 
+    patient. The server sends doctor's port number, associated with that time slot, on which the patient will now connect in phase 3.
 
 3. **Estimated Cost Calculation** – Patients communicate with doctors via UDP for cost estimation.
+    In the third phase, the patient sets up a Bidirectional UDP connection with the stipulated doctor on the received doctor port number. The patient sends his insurance information to the doctor, who replies on      the same UDP port with the estimated cost of the visit related to that insurance.
 
+   
 ## 🔗 System Components
 
 * Health Center Server 🖥️
