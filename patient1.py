@@ -1,6 +1,3 @@
-# aishwarya parthasarathi - PES1UG20CS523
-# almas banu - PES1UG20CS535
-
 #!/usr/bin/env python
 
 import socket
@@ -63,7 +60,7 @@ def main():
             print "Phase3: Patient1 has a dynamic UDP port number:", udpsocket.getsockname()[1], "and IP Address:", udpsocket.getsockname()[0]
             #read my own insuance plan
             try:
-                with open('/home/ubantu1/Desktop/CN_PROJECT/input/patient1insurance.txt', 'r') as f:
+                with open('/input/patient1insurance.txt', 'r') as f:
                     insurance=f.read()
                 print 'My insurance:', insurance
             except IOError:
