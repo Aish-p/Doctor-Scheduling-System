@@ -1,6 +1,3 @@
-# aishwarya parthasarathi - PES1UG20CS523
-# almas banu - PES1UG20CS535
-
 #!/usr/bin/env python
 
 import socket
@@ -23,7 +20,7 @@ while True:
     #open doc1.txt check cost
     dic={}
     try:
-        with open('/home/ubantu1/Desktop/CN_PROJECT/input/doc1.txt', 'r') as f:
+        with open('/input/doc1.txt', 'r') as f:
             for line in f.readlines():
                 if not line:
                     continue
