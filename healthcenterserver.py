@@ -1,6 +1,3 @@
-# aishwarya parthasarathi - PES1UG20CS523
-# almas banu - PES1UG20CS535
-
 #!/usr/bin/env python
 
 import socket
@@ -45,7 +42,7 @@ class ThreadServer(object):
             #load user database
             #open file users.txt and store infor in its memoery
             try:
-                with open('/home/ubantu2/Desktop/CN_PROJECT/input/users.txt', 'r') as f:
+                with open('/input/users.txt', 'r') as f:
                     store=f.read()
                 print 'User database:\n', store
             except IOError:
@@ -72,7 +69,7 @@ class ThreadServer(object):
                     d={}
                     #communication only via string, not list
                     try:
-                        f=open('/home/ubantu2/Desktop/CN_PROJECT/input/availabilities.txt', 'r')
+                        f=open('/input/availabilities.txt', 'r')
                         for l in f:
                             k,v = l.strip().split(' ', 1)
                             d[k]=v
